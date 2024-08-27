@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 // 从React库中引入React，用于创建和管理组件
 import React from 'react';
+import Parent from './Parent';
 
 // 这是一个使用函数式组件定义的App组件的代码片段，已被注释掉
 // function App() {
@@ -42,20 +43,26 @@ class App extends React.Component {
     this.state = {
       count: 0
     }
-    // this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
+  handleClick = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
   // render方法是React组件中必需的方法，用于渲染UI
   render() {
     console.log('render方法');
     // JSX语法，用于定义组件的UI结构
     return (
       <div>
+         <Parent>
+         </Parent>
         <p>Count: {this.state.count}</p>
         <button onClick={this.handleClick}>点击 Count</button>
       </div>
     )
   }
 }
+
 
 // 导出App组件，供其他模块使用
 export default App;
@@ -80,3 +87,6 @@ export default App;
 // ### 5. **`this.state`**
 //    - **解释**：`this.state` 相当于 Vue 的 `data`，用于定义组件的状态和初始化数据。
 //    - **补充说明**：`this.state` 是 React 组件的本地状态，用于存储组件的动态数据。与 Vue 的 `data` 类似，`this.state` 中的数据是响应式的，意味着当 `state` 发生变化时，组件会重新渲染。
+
+// ### 总结
+// - **`constructor(props)`** 中的 `props` 是组件首次实例化时传递的初始 `props`，用于初始化组件状态和属性。
