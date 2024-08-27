@@ -22,7 +22,7 @@ root.render(
 
 // 如果你想开始在应用中测量性能，可以将一个函数传递给reportWebVitals（例如：console.log），或者发送给分析端点。了解更多：https://bit.ly/CRA-vitals
 // 调用reportWebVitals函数，开始进行性能分析和优化
-reportWebVitals(console.log('传递'));
+reportWebVitals();
 
 
 // 严格模式的作用
